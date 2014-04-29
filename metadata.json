@@ -1,0 +1,32 @@
+{
+    "operatingsystem_support": [
+        { "operatingsystem": "Debian" },
+        { "operatingsystem": "Ubuntu" },
+        { "operatingsystem": "RedHat" },
+        { "operatingsystem": "CentOS" }
+    ],
+    "requirements": [
+        {
+            "name": "pe",
+            "version_requirement": "3.2.x"
+        },
+        {
+            "name": "puppet",
+            "version_requirement": "3.x"
+        }
+    ],
+    "name":         "opentable-puppetdb_rundeck",
+    "version":      "0.1.0",
+    "source":       "git://github.com/opentable/puppet-puppetdb_rundeck.git",
+    "author":       "opentable",
+    "summary":      "Module that installs and manages the puppetdb_rundeck gem",
+    "description":  "Module that installs and manages the puppetdb_rundeck gem to provide a puppetdb resource for rundecks",
+    "project_page": "https://github.com/opentable/puppet-puppetdb_rundeck",
+    "license":      "MIT",
+    "dependencies": [
+        {
+            "name": "puppetlabs/stdlib",
+            "version_requirement": ">= 3.0.0"
+        }
+    ]
+}
