@@ -7,20 +7,21 @@ class puppetdb_rundeck::service {
 
   case downcase($osfamily) {
     'debian': {
-      $content = template("puppetdb_rundeck/debian_service.erb")
+      $content = template('puppetdb_rundeck/debian_service.erb')
     }
     'redhat': {
-      $content = template("puppetdb_rundeck/redhat_service.erb")
+      $content = template('puppetdb_rundeck/redhat_service.erb')
     }
+    default: {}
   }
 
   file { "/etc/init.d/${puppetdb_rundeck::service_name}":
-    ensure => present,
+    ensure  => present,
     content => $content,
-    owner  => root,
-    group  => root,
-    mode   => '0755',
-    notify => Service[$puppetdb_rundeck::service_name]
+    owner   => root,
+    group   => root,
+    mode    => '0755',
+    notify  => Service[$puppetdb_rundeck::service_name]
   }
 
   service { $puppetdb_rundeck::service_name:
