@@ -9,6 +9,7 @@ group :test do
   gem "puppetlabs_spec_helper"
   gem "capybara"
   gem "poltergeist"
+	gem "rspec", "2.99.0"
 end
 
 group :development do
