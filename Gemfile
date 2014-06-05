@@ -7,9 +7,15 @@ group :test do
   gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
   gem "puppet-syntax"
   gem "puppetlabs_spec_helper"
-  gem "capybara"
   gem "poltergeist"
 	gem "rspec", "2.99.0"
+  if (RUBY_VERSION = '1.8.7')
+    gem "celluloid", "0.11.1"
+    gem "capybara", "1.1.4"
+    gem "rubyzip", "0.9.9"
+  else
+    gem "capybara"
+  end
 end
 
 group :development do
