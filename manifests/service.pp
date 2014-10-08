@@ -1,6 +1,10 @@
+# Author::    Liam Bennett (mailto:lbennett@opentable.com)
+# Copyright:: Copyright (c) 2013 OpenTable Inc
+# License::   MIT
+
 # == Class puppetdb_rundeck::service
 #
-# This class is meant to be called from puppetdb_rundeck
+# This private class is meant to be called from `puppetdb_rundeck`
 # It ensure the service is running
 #
 class puppetdb_rundeck::service {

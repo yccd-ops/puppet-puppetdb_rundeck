@@ -1,32 +1,31 @@
 {
-    "operatingsystem_support": [
-        { "operatingsystem": "Debian" },
-        { "operatingsystem": "Ubuntu" },
-        { "operatingsystem": "RedHat" },
-        { "operatingsystem": "CentOS" }
-    ],
-    "requirements": [
-        {
-            "name": "pe",
-            "version_requirement": "3.2.x"
-        },
-        {
-            "name": "puppet",
-            "version_requirement": "3.x"
-        }
-    ],
-    "name":         "opentable-puppetdb_rundeck",
-    "version":      "0.1.0",
-    "source":       "git://github.com/opentable/puppet-puppetdb_rundeck.git",
-    "author":       "opentable",
-    "summary":      "Module that installs and manages the puppetdb_rundeck gem",
-    "description":  "Module that installs and manages the puppetdb_rundeck gem to provide a puppetdb resource for rundecks",
-    "project_page": "https://github.com/opentable/puppet-puppetdb_rundeck",
-    "license":      "MIT",
-    "dependencies": [
-        {
-            "name": "puppetlabs/stdlib",
-            "version_requirement": ">= 3.0.0"
-        }
-    ]
+  "name":         "opentable-puppetdb_rundeck",
+  "version":      "0.1.0",
+  "author":       "opentable",
+  "license":      "MIT",
+  "summary":      "Module that installs and manages the puppetdb_rundeck gem to provide a puppetdb resource for rundecks",
+  "source":       "https://github.com/opentable/puppet-puppetdb_rundeck",
+  "project_page": "https://github.com/opentable/puppet-puppetdb_rundeck",
+  "issues_url":   "https://github.com/opentable/puppet-puppetdb_rundeck/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": ["5.0","6.0"]
+    },
+    { "operatingsystem": "CentOS",
+      "operatingsystemrelease": ["5.0","6.0"]
+    },
+    { "operatingsystem": "Debian",
+      "operatingsystemrelease": ["6.0","7.0"]
+    },
+    { "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": ["12.04","14.04"]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.0.0"
+    }
+  ]
 }

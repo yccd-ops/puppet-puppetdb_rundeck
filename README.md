@@ -1,3 +1,5 @@
+# puppetdb-rundeck
+
 ####Table of Contents
 
 1. [Overview](#overview)
@@ -13,11 +15,14 @@
 
 ##Overview
 
-The puppetdb_rundeck module
+This is a puppet module that will manage and install the puppetdb_rundeck [puppetdb_rundeck](https://rubygems.org/gems/puppetdb_rundeck) ruby gem
+
+[![Build Status](https://travis-ci.org/opentable/puppet-puppetdb_rundeck.png?branch=master)](https://travis-ci.org/opentable/puppet-puppetdb_rundeck)
 
 ##Module Description
 
-$$$$
+This module installs the [puppetdb_rundeck](https://rubygems.org/gems/puppetdb_rundeck) ruby gem. This gem is a small application that provides an
+api for puppetdb that can be used as a URL resource in rundeck.
 
 ##Setup
 
@@ -29,10 +34,30 @@ $$$$
 
 ###Beginning with puppetdb_rundeck
 
-To install puppetdb_rundeck
+To install puppetdb_rundeck:
+
 ```puppet
   puppetdb_rundeck { 'puppetdb_rundeck':
     version => '0.1.0'
+  }
+```
+
+To install puppetdb_rundeck on a different port:
+
+```puppet
+  puppetdb_rundeck { 'puppetdb_rundeck':
+    version => '0.1.0',
+    port    => '9090'
+  }
+```
+
+To install puppetdb_rundeck on a system with an external host:
+
+```puppet
+  puppetdb_rundeck { 'puppetdb_rundeck':
+    version => '0.1.0',
+    puppetdb_host => 'anotherhost.somedomain.com',
+    puppetdb_post => '8081'
   }
 ```
 
@@ -43,9 +68,15 @@ To install puppetdb_rundeck
 ####Class: `puppetdb_rundeck`
 The puppetdb_rundeck class is the root class to manage the installation of the puppetdb_rundeck gem and service
 
+##Reference
+
 ###Classes
 ####Public Classes
 * [`puppetdb_rundeck`](#class-puppetdb_rundeck): Guides the installation of the puppetdb_rundeck application
+
+####Private Classes
+* [`puppetdb_rundeck::install`] Manages the installation of the puppetdb_rundeck gem
+* [`puppetbd_rundeck::service`] Manages the puppetdb_rundeck service
 
 ##Limitations
 
@@ -62,14 +93,3 @@ It is tested with the OSS version of Puppet only.
 ###Contributing
 
 Please read CONTRIBUTING.md for full details on contributing to this project.
-
-###Running tests
-
-This project contains tests for both [rspec-puppet](http://rspec-puppet.com/) and [beaker](https://github.com/puppetlabs/beaker) to verify functionality. For in-depth information please see their respective documentation.
-
-Quickstart:
-
-    gem install bundler
-    bundle install
-    bundle exec rake spec
-	BEAKER_DEBUG=yes bundle exec rspec spec/acceptance

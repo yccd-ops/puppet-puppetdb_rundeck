@@ -1,4 +1,11 @@
+# Author::    Liam Bennett (mailto:lbennett@opentable.com)
+# Copyright:: Copyright (c) 2013 OpenTable Inc
+# License::   MIT
+
 # == Class puppetdb_rundeck::install
+#
+# This private class is meant to be called from `puppetdb_rundeck`
+# It downloads and install the puppetdb_rundeck ruby gem
 #
 class puppetdb_rundeck::install {
 

@@ -1,11 +1,56 @@
+# Author::    Liam Bennett (mailto:lbennett@opentable.com)
+# Copyright:: Copyright (c) 2013 OpenTable Inc
+# License::   MIT
+
 # == Class: puppetdb_rundeck
 #
-# Full description of class puppetdb_rundeck here.
+# A module that will manage and install the puppetdb_rundeck ruby gem
+#
+# === Requirements/Dependencies
+#
+# Currently reequires the puppetlabs/stdlib module on the Puppet Forge in
+# order to validate much of the the provided configuration.
 #
 # === Parameters
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
+# [*service_name*]
+# The name of the service that will be used to start/stop this application
+#
+# [*version*]
+# The version of the gem to install
+#
+# [*puppetdb_host*]
+# The PuppetDB host that the application should talk to.
+#
+# [*puppetdb_port*]
+# The port the configured PuppetDB host is configured to run on.
+#
+# [*port*]
+# The port to run the puppetdb_rundeck application on
+#
+# === Examples
+#
+# To install puppetdb_rundeck:
+#
+#
+#   puppetdb_rundeck { 'puppetdb_rundeck':
+#     version => '0.1.0'
+#   }
+#
+# To install puppetdb_rundeck on a different port:
+#
+#   puppetdb_rundeck { 'puppetdb_rundeck':
+#     version => '0.1.0',
+#     port    => '9090'
+#   }
+#
+# To install puppetdb_rundeck on a system with an external host:
+#
+#   puppetdb_rundeck { 'puppetdb_rundeck':
+#     version => '0.1.0',
+#     puppetdb_host => 'anotherhost.somedomain.com',
+#     puppetdb_post => '8081'
+#   }
 #
 class puppetdb_rundeck (
   $service_name  = $puppetdb_rundeck::params::service_name,
