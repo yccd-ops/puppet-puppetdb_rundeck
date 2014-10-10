@@ -82,8 +82,10 @@ The puppetdb_rundeck class is the root class to manage the installation of the p
 
 This module is tested on the following platforms:
 
+* CentOS 5
 * CentOS 6
-* Ubuntu 12.04.2
+* Ubuntu 12.04
+* Ubuntu 14.04
 
 It is tested with the OSS version of Puppet only.
 
