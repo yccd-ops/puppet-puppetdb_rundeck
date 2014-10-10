@@ -1,6 +1,6 @@
 {
   "name":         "opentable-puppetdb_rundeck",
-  "version":      "0.1.0",
+  "version":      "1.0.0",
   "author":       "opentable",
   "license":      "MIT",
   "summary":      "Module that installs and manages the puppetdb_rundeck gem to provide a puppetdb resource for rundecks",
