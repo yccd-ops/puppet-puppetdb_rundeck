@@ -21,7 +21,7 @@ class puppetdb_rundeck::service {
   if $operatingsystemmajrelease == '7' {
     file { "/usr/lib/systemd/system/${puppetdb_rundeck::service_name}.service":
       ensure => present,
-      content => template('puppetdb_rundeck/systemd_service.erb')
+      content => template('puppetdb_rundeck/systemd_service.erb'),
       owner   => 'root',
       group   => 'root',
       mode    => '0755',
