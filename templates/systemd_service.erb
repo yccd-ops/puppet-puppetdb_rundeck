@@ -3,11 +3,8 @@ Description=puppetdb_rundeck service
 After=syslog.target network.target
 
 [Service]
-Type=forking
-PrivateTmp=yes
-User=nobody
-Group=nobody
-ExecStart="/usr/local/bin/puppetdb_rundeck --port <%= @port %> --pdbhost <%= @puppetdb_host %> --pdbport <%= @puppetdb_port %>"
+Type=simple
+ExecStart=/usr/local/bin/puppetdb_rundeck --port <%= @port %> --pdbhost <%= @puppetdb_host %> --pdbport <%= @puppetdb_port %>
 PIDFile=/var/run/puppetdb_rundeck.pid
 
 [Install]
